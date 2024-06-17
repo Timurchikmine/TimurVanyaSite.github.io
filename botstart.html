@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>mechanics</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="Tpogamer.css">
+	<link rel="icon" sizes="16" href="icon.png"
+</head>
+<body>
+	<script>
+	const mineflayer = require('mineflayer');
+
+    console.log('Starting...')
+
+    function createBot () {
+        const bot = mineflayer.createBot({
+        host: "Dream134.aternos.me",
+        port: "39440",
+        username: "24ATERNOSBOT",
+        version: false
+        })
+        bot.on('login', function() {
+          bot.chat('/reginster 123123123 123123123')
+          bot.chat('/login 123123123')
+        })
+        bot.on('chat', (username, message) => {
+          if (username === bot.username) return
+          switch (message) {
+            case ';start':
+              bot.chat('24 ATERNOS > Bot started! - Made By Fortcote')
+              bot.setControlState('forward', true)
+              bot.setControlState('jump', true)
+              bot.setControlState('sprint', true)
+              break
+              case ';stop':
+                bot.chat('24 ATERNOS > Bot stoped! - Made By Fortcote')
+                bot.clearControlStates()
+                break
+              }
+            })
+            bot.on('spawn', function() {
+              bot.chat('Bot > Spawned')
+            })
+            bot.on('death', function() {
+              bot.chat('Bot > I died, respawn')
+            })
+            bot.on('kicked', (reason, loggedIn) => console.log(reason, loggedIn))
+            bot.on('error', err => console.log(err))
+            bot.on('end', createBot)
+    }
+    createBot()
+	</script>
+<header>
+	
+	<a href="#" class="logo1">TIMUR_VANYA MENU</a>
+	
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="#">youtuber</a>
+				<ul>
+					<li><a href="https://youtube.com/@Pifnop">Timur</a></li>
+				</ul>
+			</li>
+			<li><a href="#">twitcher &bigtriangledown;</a>
+				<ul>
+					<li><a href="https://www.twitch.tv/enotek_palaskyn">Vanya</a></li>
+				</ul>
+			</li>
+			<li><a href="donates.html">donates &bigtriangledown;</a>
+				<ul>
+					<li><a href="#">griefs &bigtriangledown;</a>
+						<ul>
+							<li><a href="#">bio</a></li>
+							<li><a href="#">mgr</a></li>
+							<li><a href="#">studio</a></li>
+							<li><a href="#">fanb</a></li>
+							<li><a href="#">regar</a></li>
+							<li><a href="#">poler</a></li>
+							<li><a href="#">skuf</a></li>
+							<li><a href="#">lester</a></li>
+							
+						</ul>
+					<li><a href="#">licince donates &bigtriangledown;</a>
+					    <ul>
+							<li><a href="#">helperonok</a></li>
+							<li><a href="#">helper</a></li>
+							<li><a href="#">starshiy-helper</a></li>
+							<li><a href="#">moderatik</a></li>
+							<li><a href="#">moderik</a></li>
+							<li><a href="#">moderka</a></li>
+							<li><a href="#">adminchik</a></li>
+							<li><a href="#">adminik</a></li>
+							<li><a href="#">admin</a></li>
+							<li><a href="#">vladelec</a></li>
+						</ul>
+					<li><a href="#">login</a>
+						<ul>
+							<li><a href="login.html">login &bigtriangledown;</a></li>
+							<li><a href="register.html">register &bigtriangledown;</a></li>
+						</ul>
+					</li>
+					<li><a href="#">anarhiys &bigtriangledown;</a>
+						<ul>
+							<li><a href="#">anarhist</a></li>
+						</ul>
+					</li>
+					<li><a href="#">mega-grief &bigtriangledown;</a>
+						<ul>
+							<li><a href="#">mega</a></li>
+						</ul>
+					</li>
+					</li>
+				</ul>
+			</li>
+			</li>
+			<li><a href="#">discordServer &bigtriangledown;</a>
+				<ul>
+					<li><a href="https://discord.com/invite/ZG2BxHYU">TimurDSchannel</a>
+					<li><a href="https://discord.gg/StEPErpe">VanyaDSchannel</a>
+				</ul>
+			</li>
+		</ul>
+</header>
+<button type="button" onclick="location.href='index.html'">bot is started please click me</button>
+</body>
+</html>
